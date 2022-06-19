@@ -7,7 +7,7 @@ clc
 grid on;
 
 % Inputs
-fprintf("\nVelocity wrt rest observer is v0 and vm...\nFrom the frame of reference of v0 coordinate is shifted...\n\n");
+fprintf("\nVelocity wrt rest observer is Va and Vb...\nFrom the frame of reference of Va coordinate is shifted...\n\n");
 V = input("[Va, Vb] = ");
 v0 = V(1); vm = V(2);
 
