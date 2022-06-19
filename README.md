@@ -1,2 +1,2 @@
 # Space-Time-Globe
-Space-Time Globe shows the shifting of coordinate baed on Lorenrz Transformation. This file is created in matlab to give a little idea of coordinate change due to special relativity.
+Space-Time Globe shows the shifting of coordinate based on Lorentz Transformation. Space-Time Globe will give a little idea of how coordinates change due to Special Relativity amd Lorentz transformation.
