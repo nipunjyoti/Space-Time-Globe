@@ -21,7 +21,7 @@ c = 1;
 gamma = 1/sqrt(1-vr^2);
 % Change of coordinate
 tnew = gamma*(t - vr*x);
-%xnew = gamma*(x - vr*t);
+xnew = gamma*(x - vr*t);
 t0 = t/gamma;
 
 % Label the globe
@@ -34,6 +34,7 @@ hold on;
 plot(0*t,t,'g',-v0*tnew,tnew,'g',  -c*t,t,'y',c*t,t,'y', LineWidth=2);
 plot(v0*t,t,'r',0*t0,t0,'r', LineStyle='--',LineWidth=3);
 plot(,vm*t,t,'b',vr*tnew,tnew,'b', LineStyle='--',LineWidth=2);
+plot(xnew,tnew,'y');
 
 % Label the lines
 text(c*60,-60,"Light",FontSize=15,FontWeight="bold");
