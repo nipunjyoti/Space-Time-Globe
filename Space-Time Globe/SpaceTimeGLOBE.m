@@ -1,4 +1,5 @@
 clear
+close all
 clc
 
 % Create the grids
@@ -31,7 +32,7 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(0*t,t,'g',-v0*tnew,tnew,'g',  -c*t,t,'y',c*t,t,'y', LineWidth=2);
+plot(0*t,t,'g',-v0*tnew,tnew,'g',  -c*t,t,'*',c*t,t,'*', LineWidth=1);
 plot(v0*t,t,'r',0*t0,t0,'r', LineStyle='--',LineWidth=3);
 plot(,vm*t,t,'b',vr*tnew,tnew,'b', LineStyle='--',LineWidth=2);
 plot(xnew,tnew,'y');
