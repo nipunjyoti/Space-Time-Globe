@@ -83,5 +83,3 @@ text(v0*g,g,"A",FontSize=15,FontWeight="bold",Color='r');
 text(-vr*(g-0.5),(g-0.5),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');
 text(vm*(g-1),(g-1),"B",FontSize=15,FontWeight="bold",Color='b');
 text(vr*(g-1),(g-1),"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
-
-
