@@ -11,7 +11,7 @@ xline(X,LineWidth=2);
 grid on;
 
 % Inputs
-fprintf("\nVelocity wrt rest observer is Va and Vb...\nFrom the frame of reference of Va coordinate is shifted...\n\n");
+fprintf("\nVelocity wrt rest observer(Green Sheet) is Va(Red Sheet) and Vb(Blue Sheet)...\nFrom the frame of reference of Va coordinate is shifted...\nSpeed of light is taken as 1...\n\n");
 V = input("[Va, Vb] = ");
 v0 = V(1); vm = V(2);
 
@@ -50,15 +50,18 @@ plot(-c*t,t,Color='#002050', LineWidth=2);
 plot(c*t,t,Color='#002050', LineWidth=2);
 plot(v0*t,t,'r',0*t0,t0,'r', LineStyle='--',LineWidth=3);
 plot(vm*t,t,'b',vr*tnew,tnew,'b', LineStyle='--',LineWidth=2);
+
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r');
 plot(tmovA,xmovA,Color='r');
-plot(x0,t0,Color='r');
-plot(t0,x0,Color='r');
+%plot(x0,t0,Color='r');
+%plot(t0,x0,Color='r');
 plot(xmovR,tmovR,Color='b');
 plot(tmovR,xmovR,Color='b');
 plot(xmovB,tmovB,Color='b');
 plot(tmovB,xmovB,Color='b');
+plot(x,t,Color='#107610');
+plot(t,x,Color='#107610');
 
 % Label the lines
 text(c*3.5,3.5,"Light",FontSize=15,FontWeight="bold",Color='#002050');
