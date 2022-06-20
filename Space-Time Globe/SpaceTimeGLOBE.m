@@ -16,10 +16,11 @@ V = input("[Va, Vb] = ");
 v0 = V(1); vm = V(2);
 
 % Conditions for relative velocity
-if v0>1
+if v0>1 || vm>1
     fprintf("\nCannot exceed light barrier...\n\n");
     return
 end
+
 % Relative velocity and Lorentz transformation
 vr = (vm-v0)/(1-v0*vm);
 c = 1;
@@ -72,6 +73,5 @@ text(v0*4,4,"A",FontSize=15,FontWeight="bold",Color='r');
 text(0,3,"A'",FontSize=15,FontWeight="bold",Color='#e87200');
 text(vm*3,3,"B",FontSize=15,FontWeight="bold",Color='b');
 text(vr*7,7,"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
-
 
 
