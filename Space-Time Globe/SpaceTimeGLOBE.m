@@ -2,6 +2,10 @@ clear
 close all
 clc
 
+X=0;Y=0;
+yline(Y,LineWidth=2);
+xline(X,LineWidth=2);
+
 % Create the grids
 [x,t] = meshgrid(0:5, 0:5);
 grid on;
