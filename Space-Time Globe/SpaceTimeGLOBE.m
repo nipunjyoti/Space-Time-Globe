@@ -7,11 +7,13 @@ yline(Y,LineWidth=0.8,LineStyle="--");
 xline(X,LineWidth=0.8,LineStyle='--');
 
 % Create the grids
-[x,t] = meshgrid(0:1, 0:1);
+G = input("Select no. of grid for Space-Time Sheet [x,t] = ");
+g1 = G(1); g2 = G(2);
+[x,t] = meshgrid(0:g1, 0:g2);
 grid on;
 
 % Inputs
-fprintf("\nVelocity wrt rest observer(Green Sheet) is Va(Red Sheet) and Vb(Blue Sheet)...\nFrom the frame of reference of Va coordinate is shifted...\nSpeed of light is taken as 1...\n\n");
+fprintf("\n\nVelocity wrt rest observer(Green Sheet) is Va(Red Sheet) and Vb(Blue Sheet)...\nFrom the frame of reference of Va coordinate is shifted...\nSpeed of light is taken as 1...\n\n");
 V = input("[Va, Vb] = ");
 v0 = V(1); vm = V(2);
 
