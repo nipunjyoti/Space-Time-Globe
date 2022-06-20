@@ -3,8 +3,8 @@ close all
 clc
 
 X=0;Y=0;
-yline(Y,LineWidth=2);
-xline(X,LineWidth=2);
+yline(Y,LineWidth=0.8,LineStyle="--");
+xline(X,LineWidth=0.8,LineStyle='--');
 
 % Create the grids
 [x,t] = meshgrid(0:1, 0:1);
@@ -25,9 +25,11 @@ end
 vr = (vm-v0)/(1-v0*vm);
 c = 1;
 gamma = 1/sqrt(1-vr^2);
+
 % Change of coordinate
 tnew = gamma*(t - vr*x);
 xnew = gamma*(x - vr*t);
+
 % Moving frame coordinate wrt rest observer
 tmovA = (t + v0*x)/sqrt(1-v0^2);
 xmovA = (x + v0*t)/sqrt(1-v0^2);
@@ -37,6 +39,7 @@ xmovB = (x + vm*t)/sqrt(1-vm^2);
 
 tmovR = gamma*(t + vr*x);
 xmovR = gamma*(x + vr*t);
+
 t0 = t*sqrt(1-v0^2);
 x0 = x/sqrt(1-v0^2);
 
@@ -47,25 +50,25 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(-c*t,t,Color='#002050', LineWidth=3);
-plot(c*t,t,Color='#002050', LineWidth=3);
-plot(v0*t,t,'r',LineWidth=3);
-plot(0*t0,t0, Color='#e87200', LineWidth=3);
-plot(x0,0*t0, Color='#e87200', LineWidth=3);
+plot(-c*t,t,Color='#002050', LineWidth=4);
+plot(c*t,t,Color='#002050', LineWidth=4);
+plot(v0*t,t,'r',LineWidth=4);
+plot(0*t0,t0, Color='#e87200', LineWidth=4);
+plot(x0,0*t0, Color='#e87200', LineWidth=4);
 plot(vm*t,t,'b',LineWidth=3);
-plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=3);
+plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);
 
 %Space-Time Grids
-plot(xmovA,tmovA,Color='r');
-plot(tmovA,xmovA,Color='r');
+plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');
+plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');
 %plot(x0,t0,Color='r');
 %plot(t0,x0,Color='r');
-plot(xmovR,tmovR,Color='#54b5fb');
-plot(tmovR,xmovR,Color='#54b5fb');
-plot(xmovB,tmovB,Color='b');
-plot(tmovB,xmovB,Color='b');
-plot(x,t,Color='#107610');
-plot(t,x,Color='#107610');
+plot(xmovR,tmovR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+plot(tmovR,xmovR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');
+plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');
+plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
+plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
 
 % Label the lines
 text(c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#002050');
