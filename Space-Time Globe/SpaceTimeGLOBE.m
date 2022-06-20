@@ -50,11 +50,10 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(-c*t,t,Color='#002050', LineWidth=4);
-plot(c*t,t,Color='#002050', LineWidth=4);
+plot(-c*t,t,Color='#ecc864', LineWidth=4);
+plot(c*t,t,Color='#ecc864', LineWidth=4);
 plot(v0*t,t,'r',LineWidth=4);
-plot(0*t0,t0, Color='#e87200', LineWidth=4);
-plot(x0,0*t0, Color='#e87200', LineWidth=4);
+plot(0*t0,t0, Color='#b73a3a', LineWidth=4);
 plot(vm*t,t,'b',LineWidth=3);
 plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);
 
@@ -71,11 +70,11 @@ plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
 plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
 
 % Label the lines
-text(c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#002050');
-text(-c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#002050');
+text(c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
+text(-c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
 text(v0*1,1,"A",FontSize=15,FontWeight="bold",Color='r');
-text(0,0.6,"A'",FontSize=15,FontWeight="bold",Color='#e87200');
-text(vm*0.7,0.7,"B",FontSize=15,FontWeight="bold",Color='b');
-text(vr*1.3,1.3,"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
+text(0,0.6,"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');
+text(vm*0.9,0.9,"B",FontSize=15,FontWeight="bold",Color='b');
+text(vr*0.3,0.3,"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
 
 
