@@ -7,9 +7,9 @@ yline(Y,LineWidth=0.8,LineStyle="--");
 xline(X,LineWidth=0.8,LineStyle='--');
 
 % Create the grids
-G = input("Select no. of grid for Space-Time Sheet [x,t] = ");
-g1 = G(1); g2 = G(2);
-[x,t] = meshgrid(0:g1, 0:g2);
+G = input("Select no. of grid for Space-Time Sheet = ");
+g=G(1);
+[x,t] = meshgrid(0:g, 0:g);
 grid on;
 
 % Inputs
@@ -39,8 +39,8 @@ xmovA = (x + v0*t)/sqrt(1-v0^2);
 tmovB = (t + vm*x)/sqrt(1-vm^2);
 xmovB = (x + vm*t)/sqrt(1-vm^2);
 
-tmovR = gamma*(t + vr*x);
-xmovR = gamma*(x + vr*t);
+tmovBR = gamma*(t + vr*x);
+xmovBR = gamma*(x + vr*t);
 
 t0 = t*sqrt(1-v0^2);
 x0 = x/sqrt(1-v0^2);
@@ -55,28 +55,33 @@ hold on;
 plot(-c*t,t,Color='#ecc864', LineWidth=4);
 plot(c*t,t,Color='#ecc864', LineWidth=4);
 plot(v0*t,t,'r',LineWidth=4);
-plot(0*t0,t0, Color='#b73a3a', LineWidth=4);
-plot(vm*t,t,'b',LineWidth=3);
+plot(vm*t,t,'b',LineWidth=4);
 plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);
+plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);
+plot(x*0,t,Color='#107610',LineWidth=4);
 
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');
 plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');
-%plot(x0,t0,Color='r');
-%plot(t0,x0,Color='r');
-plot(xmovR,tmovR,Color='#54b5fb',LineWidth=1,LineStyle='--');
-plot(tmovR,xmovR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+
+plot(xmovBR,tmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+
+plot(xnew,tnew,Color='#9b0065',LineWidth=1,LineStyle='--');
+plot(tnew,xnew,Color='#9b0065',LineWidth=1,LineStyle='--');
+
 plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');
 plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');
+
 plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
 plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
 
 % Label the lines
-text(c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
-text(-c*0.7,0.7,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
-text(v0*1,1,"A",FontSize=15,FontWeight="bold",Color='r');
-text(0,0.6,"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');
-text(vm*0.9,0.9,"B",FontSize=15,FontWeight="bold",Color='b');
-text(vr*0.3,0.3,"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
+text(c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
+text(-c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
+text(v0*g,g,"A",FontSize=15,FontWeight="bold",Color='r');
+text(-vr*(g-0.5),(g-0.5),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');
+text(vm*(g-1),(g-1),"B",FontSize=15,FontWeight="bold",Color='b');
+text(vr*(g-1),(g-1),"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
 
 
