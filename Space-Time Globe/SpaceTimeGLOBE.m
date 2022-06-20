@@ -48,16 +48,18 @@ ylabel('Y(Time)',FontSize=30);
 hold on;
 plot(-c*t,t,Color='#002050', LineWidth=3);
 plot(c*t,t,Color='#002050', LineWidth=3);
-plot(v0*t,t,'r',0*t0,t0,'r', LineWidth=3);
-plot(vm*t,t,'b',vr*tnew,tnew,'b',LineWidth=3);
+plot(v0*t,t,'r',LineWidth=3);
+plot(0*t0,t0, Color='#e87200', LineWidth=3)
+plot(vm*t,t,'b',LineWidth=3);
+plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=3);
 
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r');
 plot(tmovA,xmovA,Color='r');
 %plot(x0,t0,Color='r');
 %plot(t0,x0,Color='r');
-plot(xmovR,tmovR,Color='b');
-plot(tmovR,xmovR,Color='b');
+plot(xmovR,tmovR,Color='#54b5fb');
+plot(tmovR,xmovR,Color='#54b5fb');
 plot(xmovB,tmovB,Color='b');
 plot(tmovB,xmovB,Color='b');
 plot(x,t,Color='#107610');
@@ -67,9 +69,9 @@ plot(t,x,Color='#107610');
 text(c*3.5,3.5,"Light",FontSize=15,FontWeight="bold",Color='#002050');
 text(-c*3.5,3.5,"Light",FontSize=15,FontWeight="bold",Color='#002050');
 text(v0*4,4,"A",FontSize=15,FontWeight="bold",Color='r');
-text(0,3,"A'",FontSize=15,FontWeight="bold",Color='r');
+text(0,3,"A'",FontSize=15,FontWeight="bold",Color='#e87200');
 text(vm*3,3,"B",FontSize=15,FontWeight="bold",Color='b');
-text(vr*7,7,"B'",FontSize=15,FontWeight="bold",Color='b');
+text(vr*7,7,"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
 
 
 
