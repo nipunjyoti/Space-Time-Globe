@@ -46,10 +46,10 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(-c*t,t,Color='#002050', LineWidth=2);
-plot(c*t,t,Color='#002050', LineWidth=2);
-plot(v0*t,t,'r',0*t0,t0,'r', LineStyle='--',LineWidth=3);
-plot(vm*t,t,'b',vr*tnew,tnew,'b', LineStyle='--',LineWidth=2);
+plot(-c*t,t,Color='#002050', LineWidth=3);
+plot(c*t,t,Color='#002050', LineWidth=3);
+plot(v0*t,t,'r',0*t0,t0,'r', LineWidth=3);
+plot(vm*t,t,'b',vr*tnew,tnew,'b',LineWidth=3);
 
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r');
