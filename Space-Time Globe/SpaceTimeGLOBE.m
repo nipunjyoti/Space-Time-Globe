@@ -3,7 +3,7 @@ close all
 clc
 
 % Create the grids
-[x,t] = meshgrid(-80:80, -80:80);
+[x,t] = meshgrid(0:5, 0:5);
 grid on;
 
 % Inputs
@@ -24,11 +24,16 @@ gamma = 1/sqrt(1-vr^2);
 tnew = gamma*(t - vr*x);
 xnew = gamma*(x - vr*t);
 % Moving frame coordinate wrt rest observer
-tmov = gamma*(t + v0*x);
-xmov = gamma*(x + v0*t);
-tmov1 = gamma*(t + vr*x);
-xmov1 = gamma*(x + vr*t);
+tmovA = gamma*(t + v0*x);
+xmovA = gamma*(x + v0*t);
+
+tmovB = gamma*(t + vm*x);
+xmovB = gamma*(x + vm*t);
+
+tmovR = gamma*(t + vr*x);
+xmovR = gamma*(x + vr*t);
 t0 = t/gamma;
+x0 = x*gamma;
 
 % Label the globe
 title('Space-Time Globe',FontSize=30,FontWeight='bold')
@@ -37,21 +42,27 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(0*t,t,'g',-v0*tnew,tnew,'g', LineWidth=2);
-plot(-c*t,t,Color='#ffcc00', LineWidth=2);
-plot(c*t,t,Color='#ffcc00', LineWidth=2);
+plot(-c*t,t,Color='#002050', LineWidth=2);
+plot(c*t,t,Color='#002050', LineWidth=2);
 plot(v0*t,t,'r',0*t0,t0,'r', LineStyle='--',LineWidth=3);
 plot(vm*t,t,'b',vr*tnew,tnew,'b', LineStyle='--',LineWidth=2);
-plot(xmov,tmov,Color='#ffcc33');
-plot(xmov1,tmov1,Color='#cc99ff');
+%Space-Time Grids
+plot(xmovA,tmovA,Color='r');
+plot(tmovA,xmovA,Color='r');
+plot(x0,t0,Color='r');
+plot(t0,x0,Color='r');
+plot(xmovR,tmovR,Color='b');
+plot(tmovR,xmovR,Color='b');
+plot(xmovB,tmovB,Color='b');
+plot(tmovB,xmovB,Color='b');
 
 % Label the lines
-text(c*60,-60,"Light",FontSize=15,FontWeight="bold");
-text(-c*60,-60,"Light",FontSize=15,FontWeight="bold");
-text(v0*50,50,"A",FontSize=15,FontWeight="bold");
-text(0,60,"A'",FontSize=15,FontWeight="bold");
-text(vm*40,40,"B",FontSize=15,FontWeight="bold");
-text(vr*75,75,"B'",FontSize=15,FontWeight="bold");
-text(-v0*100,100,"Rest'",FontSize=15,FontWeight="bold");
-text(0,78,"Rest",FontSize=15,FontWeight="bold");
+text(c*3.5,3.5,"Light",FontSize=15,FontWeight="bold",Color='#002050');
+text(-c*3.5,3.5,"Light",FontSize=15,FontWeight="bold",Color='#002050');
+text(v0*4,4,"A",FontSize=15,FontWeight="bold",Color='r');
+text(0,3,"A'",FontSize=15,FontWeight="bold",Color='r');
+text(vm*3,3,"B",FontSize=15,FontWeight="bold",Color='b');
+text(vr*7,7,"B'",FontSize=15,FontWeight="bold",Color='b');
+
+
 
