@@ -7,7 +7,7 @@ yline(Y,LineWidth=0.8,LineStyle="--");
 xline(X,LineWidth=0.8,LineStyle='--');
 
 % Create the grids
-G = input("Select no. of grid for Space-Time Sheet = ");
+G = input("Select no. of grid for Space-Time Sheet(Recommended 5 or less) = ");
 g=G(1);
 [x,t] = meshgrid(0:g, 0:g);
 grid on;
