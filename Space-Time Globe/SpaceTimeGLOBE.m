@@ -3,8 +3,8 @@ close all
 clc
 
 X=0;Y=0;
-yline(Y,LineWidth=0.8,LineStyle="--");
-xline(X,LineWidth=0.8,LineStyle='--');
+yline(Y,LineWidth=1);
+xline(X,LineWidth=1);
 
 % Create the grids
 G = input("No. of grid for Space-Time Sheet(Recommended 1 to 5) = ");
@@ -68,8 +68,8 @@ text(vr*g,g,"B'",FontSize=15,FontWeight="bold",Color='#54b5fb');%B'
 text(0*(g-0.5),(g-0.5),"RP",FontSize=15,FontWeight="bold",Color='#107610');%Rest Perspective
 
 % Space-Time Grids
-plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt Rest observer
-plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt Rest observer
+plot(xmovA,tmovA,Color='r',LineWidth=1);%Space-Time Sheet of A wrt Rest observer
+plot(tmovA,xmovA,Color='r',LineWidth=1);%Space-Time Sheet of A wrt Rest observer
 
 plot(xmovBR,tmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt A
 plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt A
@@ -77,9 +77,9 @@ plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');%Space-Time Sheet
 plot(xmovAR,tmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt B
 plot(tmovAR,xmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt B
 
-plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt Rest observer
-plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt Rest observer
+plot(xmovB,tmovB,Color='b',LineWidth=1);%Space-Time Sheet of B wrt Rest observer
+plot(tmovB,xmovB,Color='b',LineWidth=1);%Space-Time Sheet of B wrt Rest observer
 
-plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B wrt them
-plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B wrt them
+plot(x,t,Color='#107610',LineWidth=1);%Space-Time Sheet of A or B wrt them
+plot(t,x,Color='#107610',LineWidth=1);%Space-Time Sheet of A or B wrt them
 
