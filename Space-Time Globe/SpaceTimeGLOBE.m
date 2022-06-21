@@ -18,7 +18,7 @@ V = input("[Va, Vb] = ");
 v0 = V(1); vm = V(2);
 
 % Conditions for relative velocity
-if v0>1 || vm>1
+if v0>1 || v0<-1 || vm>1 || vm<-1
     fprintf("\nCannot exceed light barrier...\n\n");
     return
 end
@@ -77,11 +77,11 @@ plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
 plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
 
 % Label the lines
-text(c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
-text(-c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
-text(v0*g,g,"A",FontSize=15,FontWeight="bold",Color='r');%A
-text(-vr*(g-0.5),(g-0.5),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');%A'
-text(vm*(g-1),(g-1),"B",FontSize=15,FontWeight="bold",Color='b');%B
-text(vr*(g-1),(g-1),"B'",FontSize=15,FontWeight="bold",Color='#3049ad');%B'
-text(0*(g-1.5),(g-1.5),"RP",FontSize=15,FontWeight="bold",Color='#107610');%Rest Perspective
+text(c*(g),(g),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(-c*(g),(g),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(v0*(g-0.7),(g-0.7),"A",FontSize=15,FontWeight="bold",Color='r');%A
+text(-vr*(g+0.3),(g+0.3),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');%A'
+text(vm*g,g,"B",FontSize=15,FontWeight="bold",Color='b');%B
+text(vr*g,g,"B'",FontSize=15,FontWeight="bold",Color='#54b5fb');%B'
+text(0*(g-0.5),(g-0.5),"RP",FontSize=15,FontWeight="bold",Color='#107610');%Rest Perspective
 
