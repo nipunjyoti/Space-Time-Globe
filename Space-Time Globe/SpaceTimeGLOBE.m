@@ -18,7 +18,7 @@ V = input("[Va, Vb] = ");
 v0 = V(1);%v0=Va
 vm = V(2);%vm=Vb
 
-% Conditions for relative velocity
+% Conditions for not crossing light barrier
 if v0>1 || v0<-1 || vm>1 || vm<-1
     fprintf("\nCannot exceed light barrier...\n\n");
     return
