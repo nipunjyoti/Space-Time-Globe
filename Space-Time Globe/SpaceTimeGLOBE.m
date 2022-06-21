@@ -76,8 +76,8 @@ plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B
 plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B wrt them
 
 % Label the lines
-text(c*(g),(g),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
-text(-c*(g),(g),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(c*g,g,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(-c*g,g,"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
 text(v0*(g-0.7),(g-0.7),"A",FontSize=15,FontWeight="bold",Color='r');%A
 text(-vr*(g+0.3),(g+0.3),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');%A'
 text(vm*g,g,"B",FontSize=15,FontWeight="bold",Color='b');%B
