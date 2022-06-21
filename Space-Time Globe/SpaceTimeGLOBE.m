@@ -7,7 +7,7 @@ yline(Y,LineWidth=0.8,LineStyle="--");
 xline(X,LineWidth=0.8,LineStyle='--');
 
 % Create the grids
-G = input("No. of grid for Space-Time Sheet(Recommended 5 or less) = ");
+G = input("No. of grid for Space-Time Sheet(Recommended 1 to 5) = ");
 g=G(1);
 [x,t] = meshgrid(0:g, 0:g);
 grid on;
@@ -28,10 +28,6 @@ vr = (vm-v0)/(1-v0*vm);
 c = 1;
 gamma = 1/sqrt(1-vr^2);
 
-% Change of coordinate
-tnew = gamma*(t - vr*x);
-xnew = gamma*(x - vr*t);
-
 % Moving frame coordinate wrt rest observer
 tmovA = (t + v0*x)/sqrt(1-v0^2);
 xmovA = (x + v0*t)/sqrt(1-v0^2);
@@ -39,11 +35,12 @@ xmovA = (x + v0*t)/sqrt(1-v0^2);
 tmovB = (t + vm*x)/sqrt(1-vm^2);
 xmovB = (x + vm*t)/sqrt(1-vm^2);
 
+% Relative frame coordinate wrt other observer
 tmovBR = gamma*(t + vr*x);
 xmovBR = gamma*(x + vr*t);
 
-t0 = t*sqrt(1-v0^2);
-x0 = x/sqrt(1-v0^2);
+tmovAR = gamma*(t - vr*x);
+xmovAR = gamma*(x - vr*t);
 
 % Label the globe
 title('Space-Time Globe',FontSize=30,FontWeight='bold')
@@ -56,7 +53,7 @@ plot(-c*t,t,Color='#ecc864', LineWidth=4);%Light
 plot(c*t,t,Color='#ecc864', LineWidth=4);%Light
 plot(v0*t,t,'r',LineWidth=4);%Line A
 plot(vm*t,t,'b',LineWidth=4);%Line B
-plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);%Line B'
+plot(vr*tmovAR,tmovAR,Color='#54b5fb',LineWidth=4);%Line B'
 plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);%Line A'
 plot(x*0,t,Color='#107610',LineWidth=4);%Rest perpective line
 
@@ -67,8 +64,8 @@ plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');
 plot(xmovBR,tmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
 plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
 
-plot(xnew,tnew,Color='#9b0065',LineWidth=1,LineStyle='--');
-plot(tnew,xnew,Color='#9b0065',LineWidth=1,LineStyle='--');
+plot(xmovAR,tmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');
+plot(tmovAR,xmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');
 
 plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');
 plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');
