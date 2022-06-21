@@ -52,13 +52,13 @@ ylabel('Y(Time)',FontSize=30);
 
 % Plot the lines
 hold on;
-plot(-c*t,t,Color='#ecc864', LineWidth=4);
-plot(c*t,t,Color='#ecc864', LineWidth=4);
-plot(v0*t,t,'r',LineWidth=4);
-plot(vm*t,t,'b',LineWidth=4);
-plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);
-plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);
-plot(x*0,t,Color='#107610',LineWidth=4);
+plot(-c*t,t,Color='#ecc864', LineWidth=4);%Light
+plot(c*t,t,Color='#ecc864', LineWidth=4);%Light
+plot(v0*t,t,'r',LineWidth=4);%Line A
+plot(vm*t,t,'b',LineWidth=4);%Line B
+plot(vr*tnew,tnew,Color='#54b5fb',LineWidth=4);%Line B'
+plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);%Line A'
+plot(x*0,t,Color='#107610',LineWidth=4);%Rest perpective line
 
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');
@@ -77,9 +77,11 @@ plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
 plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
 
 % Label the lines
-text(c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
-text(-c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');
-text(v0*g,g,"A",FontSize=15,FontWeight="bold",Color='r');
-text(-vr*(g-0.5),(g-0.5),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');
-text(vm*(g-1),(g-1),"B",FontSize=15,FontWeight="bold",Color='b');
-text(vr*(g-1),(g-1),"B'",FontSize=15,FontWeight="bold",Color='#3049ad');
+text(c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(-c*(g-1),(g-1),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
+text(v0*g,g,"A",FontSize=15,FontWeight="bold",Color='r');%A
+text(-vr*(g-0.5),(g-0.5),"A'",FontSize=15,FontWeight="bold",Color='#b73a3a');%A'
+text(vm*(g-1),(g-1),"B",FontSize=15,FontWeight="bold",Color='b');%B
+text(vr*(g-1),(g-1),"B'",FontSize=15,FontWeight="bold",Color='#3049ad');%B'
+text(0*(g-1.5),(g-1.5),"RP",FontSize=15,FontWeight="bold",Color='#107610');%Rest Perspective
+
