@@ -15,7 +15,8 @@ grid on;
 % Inputs
 fprintf("\n\nVelocity wrt rest observer(Green Sheet) is Va(Red Sheet) and Vb(Blue Sheet)...\nFrom the frame of reference of Va coordinate is shifted...\nSpeed of light is taken as 1...\n\n");
 V = input("[Va, Vb] = ");
-v0 = V(1); vm = V(2);
+v0 = V(1);%v0=Va
+vm = V(2);%vm=Vb
 
 % Conditions for relative velocity
 if v0>1 || v0<-1 || vm>1 || vm<-1
@@ -56,6 +57,7 @@ plot(vm*t,t,'b',LineWidth=4);%Line B
 plot(vr*tmovAR,tmovAR,Color='#54b5fb',LineWidth=4);%Line B'
 plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);%Line A'
 plot(x*0,t,Color='#107610',LineWidth=4);%Rest perpective line
+
 
 %Space-Time Grids
 plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt Rest observer
