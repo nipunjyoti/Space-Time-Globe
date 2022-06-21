@@ -58,20 +58,20 @@ plot(-vr*tmovBR,tmovBR,Color='#9b0065',LineWidth=4);%Line A'
 plot(x*0,t,Color='#107610',LineWidth=4);%Rest perpective line
 
 %Space-Time Grids
-plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');
-plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');
+plot(xmovA,tmovA,Color='r',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt Rest observer
+plot(tmovA,xmovA,Color='r',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt Rest observer
 
-plot(xmovBR,tmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
-plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');
+plot(xmovBR,tmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt A
+plot(tmovBR,xmovBR,Color='#54b5fb',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt A
 
-plot(xmovAR,tmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');
-plot(tmovAR,xmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');
+plot(xmovAR,tmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt B
+plot(tmovAR,xmovAR,Color='#9b0065',LineWidth=1,LineStyle='--');%Space-Time Sheet of A wrt B
 
-plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');
-plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');
+plot(xmovB,tmovB,Color='b',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt Rest observer
+plot(tmovB,xmovB,Color='b',LineWidth=1,LineStyle='--');%Space-Time Sheet of B wrt Rest observer
 
-plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');
-plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');
+plot(x,t,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B wrt them
+plot(t,x,Color='#107610',LineWidth=1,LineStyle='--');%Space-Time Sheet of A or B wrt them
 
 % Label the lines
 text(c*(g),(g),"Light",FontSize=15,FontWeight="bold",Color='#ccaa44');%Light
